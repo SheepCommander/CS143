@@ -1,5 +1,4 @@
 public class Main {
-    public static void main(String[] args) {
         // System.out.println(mystery5(5, 7));
         // System.out.println(mystery5(12, 9));
         // System.out.println(mystery5(-7, 4));
@@ -22,7 +21,37 @@ public class Main {
         // System.out.println(recursionMystery9(12, 49));
         // System.out.println(recursionMystery9(73, -8));
         // System.out.println(recursionMystery9(-248, -3795));
-        travel(2, 1);
+        //travel(2, 1);
+    public static String speakAndSpell(String input) {
+        if (input == null || input.isEmpty()) {
+            return "";
+        }
+
+        StringBuilder result = new StringBuilder();
+        int count = 1;
+        char current = input.charAt(0);
+
+        for (int i = 1; i < input.length(); i++) {
+            if (input.charAt(i) == current) {
+                count++;
+            } else {
+                result.append(count).append(current);
+                current = input.charAt(i);
+                count = 1;
+            }
+        }
+        result.append(count).append(current);
+
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        String n = speakAndSpell("5");
+        System.out.println(n);    // Output: 11
+        for (int i=1; i<18; i++) {
+            n = speakAndSpell(n);
+            System.out.println(n);
+        }
     }
 
     public static void travel(int x, int y) {
