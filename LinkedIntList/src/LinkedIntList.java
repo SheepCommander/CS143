@@ -1,3 +1,7 @@
+// CS 143 - HW #5: LinkedIntList 
+// Jun Ong
+// 
+// Implementation, linked lists, node traversal
 public class LinkedIntList implements IntList {
     private Node front;
 
